@@ -66,6 +66,13 @@ namespace Biletarnica.UI
 
         public static void NovaRezervacija()
         {
+            /*
+             Negde ovde ima greska, koju ne umem da otklonim. Kada se ovaj metod izvrsi, iz nekog razloga se u tabelu "rezervacija"
+             upisu dve rezervacije istog datuma (jedna ima id veci za 1). Ja, doduse, u ovom metodu samo jednom pozivam RezervacijaDAO.Add()
+             i nije mi jasno kako program odluci da upise 2 razlicite rezervacije odjednom. Upalio sam debugger, i nijednom se taj
+             Add metod nije potegnuo dva puta, a sam metod je u DAO fajlu definisan da dodaje samo jednu rezervaciju.
+             */
+
             Console.WriteLine("Unesite svoje ime, a zatim prezime: ");
             string ime = Console.ReadLine();
             string prez = Console.ReadLine();
